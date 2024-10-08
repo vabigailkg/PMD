@@ -4,19 +4,16 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 /**
  * Clase que gestiona las funcionalidades.
  */
 public class MainActivity extends AppCompatActivity {
 
-    // Creamos los elementos de la vista que van a tener funcionalidad
-
+    // Creamos las variables de los elementos que van a tener funcionalidad
+    private Button boton = null;
+    private TextView texto = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +25,22 @@ public class MainActivity extends AppCompatActivity {
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
 //            return insets;
 //        });
-        // Hasta aquí siempre igual
+        //---* Hasta aquí siempre igual
+
+        // Asociamos las variables a su id en la vista
+        boton = (Button) findViewById(R.id.button);
+        texto = (TextView) findViewById(R.id.textView);
+    }
+
+    public void onClick (View v) {
+        // el texto actual del TextView
+        String textViewText = texto.getText().toString();
+        // Texto 'Pulsa el boton' del strings.xml
+        String textHola = getString(R.string.text_hola_mundo);
+        // Comparamos y cambiamos
+        if (textViewText.equalsIgnoreCase(textPulsa)) {
+            
+        }
+
     }
 }
